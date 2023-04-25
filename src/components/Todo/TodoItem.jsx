@@ -4,18 +4,21 @@ import { HiCheck, HiPencil, HiTrash } from 'react-icons/hi';
 import { TodoForm } from './TodoForm';
 
 //todoSchema :  {id:1, task: asdadsasdas, status : false, due_date : 2002-04-20}
-export function TodoItem({todo}) {
+export function TodoItem({ todo, onEditTodo }) {
     // #1 : Logic,State
-    const [isCheck, setIsCheck] = useState(false);
+    // Check === DONE === todo.status == true
+    const [isCheck, setIsCheck] = useState(todo.status);
     const [isEdit, setIsEdit] = useState(false);
+	// console.log(todo.id)
 
     const handleToggleCheck = () => {
         setIsCheck(!isCheck);
     };
 
-	const handleOpenEditMode = () => {
-		setIsEdit(true)
-	}
+    const handleOpenEditMode = () => {
+        setIsEdit(true);
+		console.log(todo.id)
+    };
 
     const handleDeleteTodo = () => {
         console.log('delete');
@@ -42,11 +45,13 @@ export function TodoItem({todo}) {
                     </div>
                 </li>
             ) : (
-                <TodoForm 
-				submitText='Edit task'  
-				onSetIsShowForm={setIsEdit}
-				oldTask="old-task-name"
-				/>
+                <TodoForm
+                    submitText='Edit task'
+                    onSetIsShowForm={setIsEdit}
+                    // oldTask={todo.task}
+                    onEditTodo={onEditTodo}
+					todo={todo}
+                />
             )}
         </>
     );

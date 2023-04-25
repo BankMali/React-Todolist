@@ -2,7 +2,7 @@ import styles from './AddTodo.module.scss';
 import { useState } from 'react';
 import { TodoForm } from './TodoForm';
 
-export function AddTodo() {
+export function AddTodo({onAddTodo}) {
     // # Logic & State
     const [isAddMode, setIsAddMode] = useState(false);
 
@@ -24,6 +24,7 @@ export function AddTodo() {
                 <TodoForm  
                 submitText="Add task" 
                 onSetIsShowForm={setIsAddMode}
+                onAddTodo={onAddTodo}
                 />
             )}
         </>

@@ -1,21 +1,18 @@
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 import { AddTodo } from './AddTodo';
 import { TodoHeader } from './TodoHeader';
 import { TodoLists } from './TodoLists';
 import mockData from '../../data/todos.json';
-import { v4 as uuidv4 } from 'uuid';
 
 export function TodoContent() {
     // # Logic
     const [todos, setTodos] = useState(mockData);
-    // console.log(uuidv4())
-    // console.log(uuidv4())
-    // console.log(uuidv4())
 
-
-    const handleAddTodo = () => {
+    // ADD-TODO
+    const handleAddTodo = (newTask) => {
         // มี new todo
-        let newTodoObj = { id: uuidv4(), task: 'DoHW', status: false, due_date: '' };
+        let newTodoObj = { id: uuidv4(), task: newTask, status: false, due_date: '' };
 
         // สร้าง state ใหม่
         // update state โดย new state
@@ -26,13 +23,18 @@ export function TodoContent() {
         setTodos(currentState=> [newTodoObj,...currentState])
     };
 
+    // UPDATE-TODO
+    const handleEditTodo = () => {
+        console.log("Edit Todo in Parent : <TodoContent/>")
+    }
+
+
     // # UI
     return (
         <main className='content'>
             <TodoHeader />
-            <AddTodo />
-            <button onClick={handleAddTodo}>Test Add Todo</button>
-            <TodoLists todos={todos} />
+            <AddTodo  onAddTodo={handleAddTodo}/>
+            <TodoLists todos={todos}  onEditTodo={handleEditTodo}/>
         </main>
     );
 }
