@@ -1,0 +1,54 @@
+// #### TODO-FORM
+.todo__form__container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    // background-color: rgb(209, 209, 209);
+    border-radius: 8px;
+    gap: 10px;
+    border: 1px solid rgb(220, 220, 220);
+}
+
+.todo__form__input {
+    border: none;
+    border-radius: 4px;
+    padding: 10px 10px;
+    width: 100%;
+    font-size: 14px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.todo__form__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo__error {
+    justify-self: start;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #db4c3f;
+}
+.todo__form__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    // flex: 1;
+
+    & > button {
+        border: none;
+        padding: 8px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    & > button:last-child {
+        background-color: #db4c3f;
+        color: white;
+    }
+}

@@ -1,22 +1,21 @@
 import './App.scss';
-import {FaHome} from 'react-icons/fa';
-
+import { Header } from './components/Header';
+import { Sidebar } from './components/Sidebar'
+import { TodoContent } from './components/Todo/TodoContent';
 function App() {
+  const mockTodo = Array.from({length:5},(el,idx) => idx+1)
+  console.log(mockTodo)
   return (
     <div className="container">
       {/* header */}
-      <header className='header'>
-        <span>
-          <FaHome/>
-          header
-        </span>
-      </header>
+      <Header />
 
       {/* Sidebar */}
-      <aside className='sidebar'>Sidebar</aside>
+      <Sidebar />
 
       {/* Content */}
-      <main className='content'>Content</main>
+      <TodoContent />
+
     </div>
   );
 }

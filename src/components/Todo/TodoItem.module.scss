@@ -1,0 +1,68 @@
+
+
+
+
+// ##### TODO ITEM
+
+$grey: rgb(234, 234, 234);
+
+.todo__item__container {
+    cursor: pointer;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+
+    & > p {
+        flex: 1;
+    }
+
+    &:hover {
+        background-color: $grey;
+    }
+}
+
+.checkbox__container {
+    border-color: gray;
+    color: #343434;
+    height: 16px;
+    width: 16px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+}
+.checkbox__icon {
+    display: none;
+    font-size: 12px;
+}
+
+.checkbox__icon__done {
+    display: inline;
+    font-size: 12px;
+}
+
+// effect ติ้กถูกตอน hover ที่ <li>
+.checkbox__container:hover {
+    .checkbox__icon {
+        display: inline;
+    }
+}
+
+.edit__icon,
+.delete__icon {
+    color: gray;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+
+    & :hover {
+        color: #343434;
+    }
+}
+
+.done {
+    text-decoration: line-through;
+}
