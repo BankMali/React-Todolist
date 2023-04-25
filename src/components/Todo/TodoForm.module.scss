@@ -35,6 +35,7 @@
     color: #db4c3f;
 }
 .todo__form__buttons {
+    flex: 1;
     display: flex;
     justify-content: flex-end;
     gap: 10px;
