@@ -13,6 +13,7 @@ $grey: rgb(234, 234, 234);
 
     & > p {
         flex: 1;
+        // background-color: #343434;
     }
 
     &:hover {
@@ -61,4 +62,9 @@ $grey: rgb(234, 234, 234);
 
 .done {
     text-decoration: line-through;
+}
+
+.date__text {
+    color: gray;
+    font-size: 12px;
 }

@@ -7,6 +7,7 @@ export function AddTodo({onAddTodo}) {
     const [isAddMode, setIsAddMode] = useState(false);
 
 
+
     const handleClickAddTask = () => {
         // console.log("Open form")
         setIsAddMode(true)
@@ -22,9 +23,11 @@ export function AddTodo({onAddTodo}) {
                 </div>
             ) : (
                 <TodoForm  
-                submitText="Add task" 
+                submitText="Add Task"
                 onSetIsShowForm={setIsAddMode}
+                // onSetIsShowForm="5555"
                 onAddTodo={onAddTodo}
+                // todo == undefined
                 />
             )}
         </>
