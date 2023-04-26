@@ -47,6 +47,7 @@ export function TodoItem({ todo, onEditTodo, onDeleteTodo }) {
                     <div className={styles.checkbox__container} onClick={handleToggleCheck}>
                         <HiCheck className={checkboxStyle} />
                     </div>
+
                     <p className={taskStyle}>{todo.task}</p>
                     <span className={styles.date__text}>{getFormattedDate(todo.due_date)}</span>
 

@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { AddTodo } from './AddTodo';
 import { TodoHeader } from './TodoHeader';
 import { TodoLists } from './TodoLists';
-import mockData from '../../data/todos.json';
+// import mockData from '../../data/todos.json';
 
-export function TodoContent() {
+export function TodoContent({todos,setTodos}) {
     // # Logic
-    const [todos, setTodos] = useState(mockData);
+    // const [todos, setTodos] = useState(mockData);
 
     // ADD-TODO
     const handleAddTodo = (newTask) => {
@@ -31,7 +31,7 @@ export function TodoContent() {
         // #1 FindIndex
         const foundedIndex = todos.findIndex(todoObj=> todoObj.id === todoId)
         // Not founded
-        if(foundedIndex === -1) return;
+        if(foundedIndex == -1) return;
         // Founded
         const newTodos = [...todos]
         // let oldTodoObj = newTodos[foundedIndex]
